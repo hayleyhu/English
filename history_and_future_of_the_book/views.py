@@ -9,6 +9,6 @@ def post_list(request):
 	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'history_and_future_of_the_book/post_list.html', {'posts': posts})
 
-def show_table(request):
-	entries = Table.objects.all()
-	return render(request, 'history_and_future_of_the_book/show_table.html', {'entries':entries})
+def index(request):
+	tables = Table.objects.filter(file_position='dfghjk')
+	return render(request, 'history_and_future_of_the_book/index.html', {'tables':tables})

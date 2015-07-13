@@ -4,3 +4,4 @@ from .models import Table
 
 admin.site.register(Post)
 admin.site.register(Table)
+
