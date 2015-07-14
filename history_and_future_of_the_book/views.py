@@ -10,5 +10,5 @@ def post_list(request):
 	return render(request, 'history_and_future_of_the_book/post_list.html', {'posts': posts})
 
 def index(request):
-	tables = Table.objects.filter(file_position='dfghjk')
-	return render(request, 'history_and_future_of_the_book/index.html', {'tables':tables})
+	tables = Table.objects.all()
+	return render(request, 'history_and_future_of_the_book/index.html', {'action':'Display all tables', 'tables':tables})
