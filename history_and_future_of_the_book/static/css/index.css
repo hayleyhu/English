@@ -5,6 +5,9 @@
 table{
 	width: 100%;
 }
+tfoot {
+    display: table-header-group;
+}
 
 table.sortable thead {
     background-color:#eee;

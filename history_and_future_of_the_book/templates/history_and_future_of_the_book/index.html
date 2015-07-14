@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="../static/js/bootstrap.js"></script>
 	<script type="text/javascript" src="../static/js/site.js"></script>
   <script src="../static/js/sorttable.js"></script>
+  <script src="../static/js/filter.js"></script>
 </head>
 <body>
 	<h1 id='top'>Search English Document</h1>
@@ -21,18 +22,30 @@
       </select> entries
       </label>
     </div>
-    <div><label>Filter: <input></input></label></div>
+    <div>Filter: <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
   </div>
   <div>
-    <table class="sortable">
+    <table class="sortable" class="table table-list-search">
       <thead>
         <tr><th>File Position</th><th>KWICL</th><th>Keyword</th><th>KWICR</th><th>Choice 1</th><th>Choice 2</th><th>Choice 3</th><th>Correct Choice</th></tr>  
       </thead>
+      <tfoot>
+        <tr>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by File Position"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by KWICL"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by Keyword"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by KWICR"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by Choice1"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by Choice2"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by Choice3"></input></th>
+          <th rowspan="1" colspan="1"><input type="text" size="7" placeholder="Filter by Correct Choice"></input></th>
+        </tr>
+      </tfoot>
+      <tbody>
       {% for entry in tables %}
       <tr><th>{{entry.file_position}}</th><th>{{entry.kwicl}}</th><th>{{entry.keyword}}</th><th>{{entry.kwicr}}</th><th>{{entry.choice1}}</th><th>{{entry.choice2}}</th><th>{{entry.choice3}}</th><th>{{entry.correct_choice}}</th></tr>
       {% endfor %}
-      <tfoot></tfoot>
-      <tbody></tbody>
+      </tbody>
     </table>
   </div>
 
