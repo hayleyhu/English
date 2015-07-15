@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.utils import timezone
-
+from django import forms
 import csv
 
 
@@ -36,6 +36,9 @@ class Table(models.Model):
         return str(self.file_position)
 
 
-    
-    
+class Member(models.Model):
+    username = models.CharField(max_length=200)
+    password = forms.CharField(widget=forms.PasswordInput())
 
+    def __str__(self):
+        return str(self.username)
